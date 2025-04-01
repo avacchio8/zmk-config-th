@@ -9,27 +9,13 @@
 #define SCROLL 2
 
 / {
-  trackball_listener {
-    scroller {
-        layers = <2>;
-        input-processors = <
-          &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
-          &zip_x_scaler 0 16  // disable x scroller
-          &zip_y_scaler 1 16
-          &zip_xy_to_scroll_mapper
-        >;
-    };
-  };
-
-
-    /**** Behaviors ****/
+    /* Behaviors */
     // スクロール設定
     msc {
         acceleration-exponent = <0>;      // 0
         time-to-max-speed-ms = <200>;     // 300
         delay-ms = <5>;                   // 10
     };
-
     // エンコーダー：キー
     behaviors {
         rot_kp: sensor_rotate_kp {
@@ -52,7 +38,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-    	DEFAULT_WIN {                  // WINDOWS用
+        // WINDOWS用
+    	DEFAULT_WIN {
             bindings = <
                 // Key
                 &mkp MB2   &kp LCTRL   &kp LSHFT    &kp BSPC
@@ -73,7 +60,8 @@
             sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
     	};
 
-    	DEFAULT_MAC {                  // MacOS用
+        // MacOS用
+    	DEFAULT_MAC {
             bindings = <
                 // Key
                 &mkp MB2   &kp LGUI   &kp LSHFT    &kp BSPC
@@ -94,7 +82,8 @@
             sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
     	};
 
-        SETTINGS {              // BT設定、スクロールレイヤー
+        // BT設定、スクロールレイヤー
+        SETTINGS {
             bindings = <
                 // Key
                 &none &none &none &none
