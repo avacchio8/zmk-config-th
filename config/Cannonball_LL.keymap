@@ -69,8 +69,6 @@
                 &kp F1 &kp F2 &kp F3 &kp F4
                 // Back
                 &bt BT_SEL 0 &bt BT_SEL 1
-                // Center Push
-                // &kp QMARK
     	    >;
             sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
     	};
@@ -92,8 +90,6 @@
                 &kp F1 &kp F2 &kp F3 &kp F4
                 // Back
                 &bt BT_SEL 0 &bt BT_SEL 1
-                // Center Push
-                // &kp QMARK
     	    >;
             sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
     	};
@@ -115,8 +111,6 @@
                 &none &none &none &none
                 // Back
                 &bt BT_CLR_ALL &bt BT_CLR
-                // Center Push
-                // &kp QMARK
     	    >;
             sensor-bindings = <&rot_kp LEFT RIGHT>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_msc MOVE_LEFT MOVE_RIGHT>;
     	};

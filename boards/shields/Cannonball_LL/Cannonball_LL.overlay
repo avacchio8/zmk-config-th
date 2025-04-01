@@ -53,8 +53,6 @@
         // Back
 	    , <&key_physical_attrs 100 100 675 550   0  0  0>
 	    , <&key_physical_attrs 100 100 675 650   0  0  0>
-        // Center Push
-	    , <&key_physical_attrs 100 100 300 200   0  0  0>
 	    ;
     };
 
@@ -79,8 +77,6 @@
             RC(0,14) RC(1,14) RC(0,12) RC(0,13)
             // Back
             RC(1,13) RC(1,12)
-            // Center Push
-            RC(1,15)
         >;
     };
 
@@ -108,7 +104,6 @@
             , <&shifter 12 GPIO_ACTIVE_HIGH>
             , <&shifter 13 GPIO_ACTIVE_HIGH>
             , <&shifter 14 GPIO_ACTIVE_HIGH>
-            , <&shifter 15 GPIO_ACTIVE_HIGH>
             ;
     };
 
