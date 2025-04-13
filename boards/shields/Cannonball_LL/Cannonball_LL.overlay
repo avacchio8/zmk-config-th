@@ -197,7 +197,7 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
   	    cpi = <1200>;
-        spi-max-frequency = <1000000>;
+        spi-max-frequency = <400000>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -209,7 +209,7 @@
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
-        spi-max-frequency = <1000000>;
+        spi-max-frequency = <400000>;
         reg = <1>;
         #gpio-cells = <2>;
         label = "4HC595";
