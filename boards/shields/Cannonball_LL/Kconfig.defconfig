@@ -1,0 +1,21 @@
+if CANNONBALL_LL
+
+    config ZMK_KEYBOARD_NAME
+        default "Cannonball LL"
+
+    config ZMK_POINTING
+        default y
+
+    config SPI
+        default y
+
+    config PMW3610
+        default y
+
+    config INPUT
+        default y
+
+    config EC11
+        default y
+
+endif

@@ -1,4 +1,12 @@
-Branches
-- [Cannonball-LL](https://github.com/Taro-Hayashi/zmk-config-th/tree/Cannonball-LL)
-- [Armors](https://github.com/Taro-Hayashi/zmk-config-th/tree/Armors)
-- [Shotgun](https://github.com/Taro-Hayashi/zmk-config-th/tree/Shotgun)
+# Cannonball LL
+![](https://github.com/Taro-Hayashi/Cannonball-LL/blob/main/img/cannonballll.jpg)
+- GitHub: https://github.com/Taro-Hayashi/Cannonball-LL
+- BOOTH: https://tarohayashi.booth.pm/items/6736492
+
+## Usage
+- Fork this repository.
+- Clone forked repository.
+- Edit keymap (create branch if you want).
+- Commit and push local repository.
+- Download firmware.zip from GitHub Action when done.
+

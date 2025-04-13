@@ -1,0 +1,2 @@
+config CANNONBALL_LL
+    def_bool $(shields_list_contains,Cannonball_LL)
