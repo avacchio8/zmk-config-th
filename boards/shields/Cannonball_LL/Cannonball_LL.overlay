@@ -63,9 +63,9 @@
         columns = <16>;
         map = <
             // Lever
-            RC(1,10) RC(1, 7)　// up
-            RC(1,11) RC(1, 8)　// push
-            RC(1,9)  RC(1, 6)　// down
+            RC(1,10) RC(1,7) // up
+            RC(1,11) RC(1,8) // push
+            RC(1,9)  RC(1,6) // down
             // Stick
             RC(1,0) // up
             RC(1,2) // left
