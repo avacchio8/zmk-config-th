@@ -103,7 +103,7 @@
 &trans
 &to DEFAULT_WIN    &kp F12          &to DEFAULT_MAC  &trans
 &kp F2
-&kp F3             &kp F4           &bt BT_SEL 0
+&kp F3             &kp F4           &bt BT_SEL 0  &kp LC(W)
             >;
 
             sensor-bindings =
@@ -130,7 +130,7 @@
 &none
 &none  &none       &none           &none
 &none
-&none  &none       &bt BT_CLR_ALL
+&none  &none       &bt BT_CLR_ALL &none
             >;
 
             sensor-bindings =
