@@ -79,7 +79,7 @@
             // Key 1row:Mouse Button
             RC(0,6)         RC(0,0)
             // Side upper row
-            RC(0,14) RC(1,14)
+            RC(0,14) RC(0,12)
             // Key 2row
             RC(0,7) RC(0,4) RC(0,1)
             // Back
@@ -89,7 +89,7 @@
             // UP Wheel Middle???
             RC(1,4)
             // Side bottom row left
-            RC(0,12) 
+            RC(1,14) 
             // Key 3row
             RC(0,9) RC(0,5) RC(0,3)
             // Side bottom row right
