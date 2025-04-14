@@ -41,6 +41,20 @@
 
     /* キーマップ */
 
+    combos {
+        compatible = "zmk,combos";
+
+        cmb_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <17 18>;
+        };
+
+        cmb_bksp {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <18 19>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -48,27 +62,27 @@
 
         DEFAULT_VERTICAL {
             bindings = <
-&kp LS(LC(TAB))  &kp LC(N)
-&tog 1           &kp LC(N4)
-&kp LC(TAB)      &kp LC(S)
+&kp LS(LC(TAB))   &kp LC(N)
+&tog 1            &kp LC(N4)
+&kp LC(TAB)       &kp LC(S)
 &kp RIGHT
 &kp LEFT
 &kp UP_ARROW
 &kp DOWN
-&kp LC(C)        &kp LC(V)
-&mkp MB1         &mkp MB3           &mkp MB2
-&kp LA(LEFT)     &kp LG(LS(RIGHT))
-&kp ENTER        &mkp MCLK          &kp BACKSPACE
+&kp LC(C)         &kp LC(V)
+&mkp MB1          &kp ENTER          &mkp MB2
+&kp LA(LEFT)      &kp LG(LS(RIGHT))
+&kp LCTRL         &mkp MB3           &kp TAB
 &bt BT_SEL 0
-&kp LCTRL        &mo 2              &kp TAB        &bt BT_SEL 1
+&kp LC(LG(LEFT))  &mo 2              &kp LC(LG(RIGHT))  &bt BT_SEL 1
 &kp LA(RIGHT)
-&kp LG(LS(S))    &kp LG(V)          &kp LG(RS(D))  &kp LC(W)
+&kp LG(LS(S))     &kp LG(V)          &kp LG(RS(D))      &kp LC(W)
             >;
 
             sensor-bindings =
-                <&rot_kp MINUS PLUS>,
+                <&rot_kp PLUS MINUS>,
                 <&rot_msc MOVE_DOWN MOVE_UP>,
-                <&rot_kp LA(LC(RIGHT)) LG(TAB)>;
+                <&rot_kp LG(TAB) LA(LC(RIGHT))>;
         };
 
         // MacOS用
