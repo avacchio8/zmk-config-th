@@ -90,10 +90,10 @@
             RC(1,14) 
             // Key 3row
             RC(0,9) RC(0,5) RC(0,3)
-            // Side bottom row right
-            RC(0,13) 
             // Back2???
             RC(1,12)
+            // Side bottom row right
+            RC(0,13) 
         >;
     };
 
