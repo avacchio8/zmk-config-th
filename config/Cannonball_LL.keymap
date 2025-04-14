@@ -56,13 +56,13 @@
 &kp N9
 &kp N0
 &kp A   &kp B
-&kp C   &kp D
+&kp C   &kp N   &kp D
 &kp E   &kp F
 &kp G   &kp H   &kp I
 &kp J
-&kp K   &kp L   &kp M  &kp N
+&kp K   &kp L   &kp M  &kp X
 &kp O
-&kp P   &kp Q   &kp R  &kp R
+&kp P   &kp Q   &kp R  &kp S
             >;
 
             sensor-bindings =
