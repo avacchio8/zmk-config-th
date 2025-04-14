@@ -1,8 +1,8 @@
+#include <dt-bindings/zmk/input_transform.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -11,12 +11,15 @@
 / {
     /* Behaviors */
     // スクロール設定
+
     msc {
         acceleration-exponent = <0>;      // 0
         time-to-max-speed-ms = <200>;     // 300
         delay-ms = <5>;                   // 10
     };
+
     // エンコーダー：キー
+
     behaviors {
         rot_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -24,7 +27,9 @@
             bindings = <&kp>, <&kp>;
         };
     };
+
     // エンコーダー：マウススクロール
+
     behaviors {
         rot_msc: sensor_rotate_msc {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -35,73 +40,89 @@
     };
 
     /* キーマップ */
+
     keymap {
         compatible = "zmk,keymap";
 
         // WINDOWS用
-    	DEFAULT_WIN {
+
+        DEFAULT_WIN {
             bindings = <
-                // Key
-                &mkp MB2   &kp LCTRL   &kp LSHFT    &kp BSPC
-                &mkp MB3   &mo SCROLL &kp LC(N0)   &kp DEL
-                &mkp MB1   &kp TAB    &kp LS(TAB)  &kp RET
-                // Mouse
-                &kp LC(C) &kp LC(V)
-                // Stick
-                &kp LS(LC(T)) &kp LS(LC(TAB)) &kp LC(W) &kp LC(TAB)
-                // Lever
-                &to DEFAULT_WIN &kp F11 &to DEFAULT_MAC
-                &to DEFAULT_WIN &kp F12 &to DEFAULT_MAC
-                // Side
-                &kp F1 &kp F2 &kp F3 &kp F4
-                // Back
-                &bt BT_SEL 0 &bt BT_SEL 1
-    	    >;
-            sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
-    	};
+&mkp MB2         &kp LCTRL
+&kp LSHFT        &kp BSPC
+&mkp MB3         &mo SCROLL
+&kp LC(N0)
+&kp DEL
+&mkp MB1
+&kp TAB
+&kp LS(TAB)      &kp RET
+&kp LC(C)        &kp LC(V)
+&kp LS(LC(T))    &kp LS(LC(TAB))
+&kp LC(W)        &kp LC(TAB)      &to DEFAULT_WIN
+&kp F11
+&to DEFAULT_MAC  &to DEFAULT_WIN  &kp F12          &to DEFAULT_MAC
+&kp F5
+&kp F2           &kp F3           &kp F4           &bt BT_SEL 0
+            >;
+
+            sensor-bindings =
+                <&rot_kp LG(Z) LS(LG(Z))>,
+                <&rot_msc MOVE_DOWN MOVE_UP>,
+                <&rot_kp LG(PLUS) LG(MINUS)>;
+        };
 
         // MacOS用
-    	DEFAULT_MAC {
+
+        DEFAULT_MAC {
             bindings = <
-                // Key
-                &mkp MB2   &kp LGUI   &kp LSHFT    &kp BSPC
-                &mkp MB3   &mo SCROLL &kp LG(N0)   &kp DEL
-                &mkp MB1   &kp TAB    &kp LS(TAB)  &kp RET
-                // Mouse
-                &kp LG(C) &kp LG(V)
-                // Stick
-                &kp LS(LG(T)) &kp LS(LC(TAB)) &kp LG(W) &kp LC(TAB)
-                // Lever
-                &to DEFAULT_WIN &kp F11 &to DEFAULT_MAC
-                &to DEFAULT_WIN &kp F12 &to DEFAULT_MAC
-                // Side
-                &kp F1 &kp F2 &kp F3 &kp F4
-                // Back
-                &bt BT_SEL 0 &bt BT_SEL 1
-    	    >;
-            sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_kp LG(PLUS) LG(MINUS)>;
-    	};
+&mkp MB2         &kp LGUI
+&kp LSHFT        &kp BSPC
+&mkp MB3         &mo SCROLL
+&kp LG(N0)
+&kp DEL
+&mkp MB1
+&kp TAB
+&kp LS(TAB)      &kp RET
+&kp LG(C)        &kp LG(V)
+&kp LS(LG(T))    &kp LS(LC(TAB))
+&kp LG(W)        &kp LC(TAB)      &to DEFAULT_WIN
+&kp F11
+&to DEFAULT_MAC  &to DEFAULT_WIN  &kp F12          &to DEFAULT_MAC
+&kp F1
+&kp F2           &kp F3           &kp F4           &bt BT_SEL 0
+            >;
+
+            sensor-bindings =
+                <&rot_kp LG(Z) LS(LG(Z))>,
+                <&rot_msc MOVE_DOWN MOVE_UP>,
+                <&rot_kp LG(PLUS) LG(MINUS)>;
+        };
 
         // BT設定、スクロールレイヤー
+
         SETTINGS {
             bindings = <
-                // Key
-                &none &none &none &none
-                &none &mo SCROLL &none &none
-                &none &none &none &none
-                // Mouse
-                &none &none
-                // Stick
-                &none &none &none &none
-                // Lever
-                &none &none &none
-                &none &none &none
-                // Side
-                &none &none &none &none
-                // Back
-                &bt BT_CLR_ALL &bt BT_CLR
-    	    >;
-            sensor-bindings = <&rot_kp LEFT RIGHT>, <&rot_msc MOVE_DOWN MOVE_UP>, <&rot_msc MOVE_LEFT MOVE_RIGHT>;
-    	};
+&none  &none
+&none  &none
+&none  &mo SCROLL
+&none
+&none
+&none
+&none
+&none  &none
+&none  &none
+&none  &none
+&none  &none       &none
+&none
+&none  &none       &none  &none
+&none
+&none  &none       &none  &bt BT_CLR_ALL
+            >;
+
+            sensor-bindings =
+                <&rot_kp LEFT RIGHT>,
+                <&rot_msc MOVE_DOWN MOVE_UP>,
+                <&rot_msc MOVE_LEFT MOVE_RIGHT>;
+        };
     };
 };
