@@ -86,12 +86,12 @@
             RC(1,13)
             // Key 3row
             RC(0,8) RC(1,5) RC(0,2)
-            // Side bottom row left
-            RC(1,14) 
-            // Key 3row
-            RC(0,9) RC(0,5) RC(0,3)
             // Back2???
             RC(1,12)
+            // Side bottom row left
+            RC(1,14) 
+            // Key 4row
+            RC(0,9) RC(0,5) RC(0,3)
             // Side bottom row right
             RC(0,13) 
         >;
