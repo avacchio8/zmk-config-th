@@ -63,7 +63,7 @@
         DEFAULT_VERTICAL {
             bindings = <
 &kp LS(LC(TAB))    &kp LC(N)
-&tog 1             &kp LC(N4)
+&tog 1             &kp LC(T)
 &kp LC(TAB)        &kp LC(S)
 &kp LC(LG(RIGHT))
 &kp LC(LG(LEFT))
@@ -71,11 +71,11 @@
 &kp PAGE_DOWN
 &kp LC(C)          &kp LC(V)
 &mkp MB1           &kp ENTER          &mkp MB2
-&kp LA(LEFT)       &kp LG(LS(RIGHT))
+&kp LA(RIGHT)      &kp LG(LS(RIGHT))
 &kp LCTRL          &mkp MB3           &kp TAB
 &bt BT_SEL 0
 &kp LSHIFT         &mo 2              &kp C          &bt BT_SEL 1
-&kp LA(RIGHT)
+&kp LA(LEFT)
 &kp LG(LS(S))      &kp LG(V)          &kp LG(RS(D))  &kp LC(W)
             >;
 
@@ -87,29 +87,29 @@
 
         // MacOS用
 
-        DEFAULT_MAC {
+        MODE_HORIZON {
             bindings = <
-&mkp MB2         &kp LGUI
-&kp LSHFT        &kp BSPC
-&mkp MB3         &mo SCROLL
-&kp LG(N0)
-&kp DEL
-&mkp MB1
-&kp TAB
-&kp LS(TAB)      &kp RET
-&kp LG(C)        &kp LG(V)        &kp LS(LG(T))
-&kp LS(LC(TAB))  &kp LG(W)
-&kp LC(TAB)      &to DEFAULT_WIN  &kp F11
-&to DEFAULT_MAC
-&to DEFAULT_WIN  &kp F12          &to DEFAULT_MAC  &kp F1
+&trans             &trans
+&trans             &trans
+&trans             &trans
+&kp PAGE_DOWN
+&kp PG_UP
+&kp LC(LG(RIGHT))
+&kp LC(LG(LEFT))
+&kp LS(TAB)        &kp RET
+&kp LG(C)          &kp LG(V)        &kp LS(LG(T))
+&kp LS(LC(TAB))    &kp LG(W)
+&kp LC(TAB)        &to DEFAULT_WIN  &kp F11
+&trans
+&to DEFAULT_WIN    &kp F12          &to DEFAULT_MAC  &trans
 &kp F2
-&kp F3           &kp F4           &bt BT_SEL 0
+&kp F3             &kp F4           &bt BT_SEL 0
             >;
 
             sensor-bindings =
-                <&rot_kp LG(Z) LS(LG(Z))>,
+                <&rot_kp C_VOL_UP C_VOL_DN>,
                 <&rot_msc MOVE_DOWN MOVE_UP>,
-                <&rot_kp LG(PLUS) LG(MINUS)>;
+                <&rot_kp LG(TAB) LA(LC(RIGHT))>;
         };
 
         // BT設定、スクロールレイヤー
