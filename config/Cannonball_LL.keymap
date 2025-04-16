@@ -76,11 +76,11 @@
 &kp PAGE_DOWN
 &kp LC(C)          &kp LC(V)
 &mkp MB1           &kp ENTER          &mkp MB2
-&kp LA(RIGHT)      &kp LG(LS(RIGHT))
+&mkp MB5           &kp LG(LS(RIGHT))
 &kp LCTRL          &mkp MB3           &kp TAB
 &bt BT_SEL 0
 &kp LSHIFT         &mo 2              &kp C          &bt BT_SEL 1
-&kp LA(LEFT)
+&mkp MB4
 &kp LG(LS(S))      &kp LG(V)          &kp LG(RS(D))  &kp LC(W)
             >;
 
