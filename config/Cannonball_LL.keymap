@@ -44,7 +44,7 @@
     combos {
         compatible = "zmk,combos";
 
-        cmb_esc {
+        cmb_esc_v {
             bindings = <&kp ESCAPE>;
             key-positions = <17 18>;
         };
@@ -53,6 +53,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <18 19>;
         };
+
+        cmb_esc_h {
+            bindings = <&kp ESCAPE>;
+            key-positions = <21 26>;
+        };
     };
 
     keymap {
@@ -60,7 +65,7 @@
 
         // WINDOWS用
 
-        DEFAULT_VERTICAL {
+        MODE_VERTICAL {
             bindings = <
 &kp LS(LC(TAB))    &kp LC(N)
 &tog 1             &kp LC(T)
@@ -89,21 +94,21 @@
 
         MODE_HORIZON {
             bindings = <
-&trans             &trans
-&trans             &trans
-&trans             &trans
-&kp PAGE_DOWN
-&kp PG_UP
-&kp LC(LG(RIGHT))
-&kp LC(LG(LEFT))
-&kp LS(TAB)        &kp RET
-&kp LG(C)          &kp LG(V)        &kp LS(LG(T))
-&kp LS(LC(TAB))    &kp LG(W)
-&kp LC(TAB)        &to DEFAULT_WIN  &kp F11
+&kp PAGE_DOWN  &kp LS(LA(TAB))
+&trans         &kp LS(LG(RIGHT))
+&kp PAGE_UP    &kp LA(TAB)
+&kp DOWN
+&kp UP_ARROW
+&kp RIGHT
+&kp LEFT
+&kp DELETE     &kp BACKSPACE
+&kp V          &kp W              &kp TAB
+&kp F11        &kp ENTER
+&kp X          &kp LEFT_ALT       &kp T
 &trans
-&to DEFAULT_WIN    &kp F12          &to DEFAULT_MAC  &trans
-&kp F2
-&kp F3             &kp F4           &bt BT_SEL 0  &kp LC(W)
+&kp C          &kp N              &kp S     &trans
+&kp LS(LG(S))
+&kp LCTRL      &kp LSHIFT         &kp LGUI  &kp SPACE
             >;
 
             sensor-bindings =
@@ -116,21 +121,21 @@
 
         SETTINGS {
             bindings = <
-&none  &none
-&none  &none
-&none  &mo SCROLL
+&none       &none
+&none       &none
+&none       &none
 &none
 &none
 &none
 &none
-&none  &none
-&none  &none       &none
-&none  &none
-&none  &none       &none
+&none       &none
+&none       &none  &none
+&none       &none
+&none       &none  &none
 &none
-&none  &none       &none           &none
+&none       &none  &none           &none
 &none
-&none  &none       &bt BT_CLR_ALL &none
+&bt BT_CLR  &none  &bt BT_CLR_ALL  &none
             >;
 
             sensor-bindings =
