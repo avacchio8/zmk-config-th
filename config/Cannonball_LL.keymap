@@ -8,35 +8,55 @@
 #define DEFAULT_MAC 1
 #define SCROLL 2
 
+// エンコーダスクロール用には効果なし
+// #define ZMK_MOUSE_SCRL_VAL 100
+// #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+
 / {
     /* Behaviors */
     // スクロール設定
 
     msc {
-        acceleration-exponent = <0>;      // 0
+        // エンコーダ回転での SCRL_UP/DOWN には効果がないっぽい
+        // センサー側の設定？
+        acceleration-exponent = <1>;      // 0
         time-to-max-speed-ms = <200>;     // 300
-        delay-ms = <5>;                   // 10
+        delay-ms = <1>;                   // 10
     };
 
-    // エンコーダー：キー
-
     behaviors {
+        // エンコーダー：キー
         rot_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
-    };
 
-    // エンコーダー：マウススクロール
-
-    behaviors {
+        // エンコーダー：マウススクロール
         rot_msc: sensor_rotate_msc {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             tap-ms = <20>;
             bindings = <&msc>, <&msc>;
         };
+
+        // エンコーダー：マウススクロール(SCRL_UP/DOWN 専用)
+        scroll_up_down: sensor_rotate_msc_for_scrl {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // ※112以下だと動作しない
+            tap-ms = <113>;
+        };
+
+        // behavior-sensor-rotate-var に SCRL_UP 渡しても違いは感じない
+        //scroll_up_down2: sensor_rotate_msc2  {
+        //    compatible = "zmk,behavior-sensor-rotate-var";
+        //    #sensor-binding-cells = <2>;
+        //    bindings = <&msc>, <&msc>;
+        //    tap-ms = <113>;
+        //};
+
     };
 
     /* キーマップ */
@@ -86,8 +106,10 @@
 
             sensor-bindings =
                 <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&rot_msc MOVE_DOWN MOVE_UP>,
+                <&scroll_up_down>,
                 <&rot_kp LG(TAB) LA(LC(RIGHT))>;
+                //<&rot_msc MOVE_DOWN MOVE_UP>,
+                //<&scroll_up_down2 SCRL_UP SCRL_DOWN>,
         };
 
         // MacOS用
