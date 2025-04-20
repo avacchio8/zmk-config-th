@@ -24,7 +24,14 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // エンコーダー：マウススクロール(MOVE_Y 専用)
+        // エンコーダー：マウススクロール 
+        rot_msc: sensor_rotate_msc {
+             compatible = "zmk,behavior-sensor-rotate-var";
+             #sensor-binding-cells = <2>;
+             tap-ms = <20>;
+             bindings = <&msc>, <&msc>;
+
+        // エンコーダー：マウススクロール(MOVE_Y)
         scroll_move_y: sensor_rotate_msc_for_move_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -33,7 +40,7 @@
             tap-ms = <65>;
         };
 
-        // エンコーダー：マウススクロール(MOVE_X 専用)
+        // エンコーダー：マウススクロール(MOVE_X)
         scroll_move_x: sensor_rotate_msc_for_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
