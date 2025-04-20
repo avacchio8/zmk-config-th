@@ -30,6 +30,7 @@
              #sensor-binding-cells = <2>;
              tap-ms = <20>;
              bindings = <&msc>, <&msc>;
+        };
 
         // エンコーダー：マウススクロール(MOVE_Y)
         scroll_move_y: sensor_rotate_msc_for_move_y {
