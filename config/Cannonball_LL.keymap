@@ -49,6 +49,16 @@
             tap-ms = <113>;
         };
 
+        // エンコーダー：マウススクロール(MOVE_Y 専用)
+        scroll_move_y: sensor_rotate_msc_for_move_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_Y(20)>, <&msc MOVE_Y(-20)>;
+
+            // tap-ms下限メモ Yの値で可変: Y(15) <81>, Y(20) <65>, Y(25) <49>
+            tap-ms = <65>;
+        };
+
         // behavior-sensor-rotate-var に SCRL_UP 渡しても違いは感じない
         //scroll_up_down2: sensor_rotate_msc2  {
         //    compatible = "zmk,behavior-sensor-rotate-var";
@@ -106,10 +116,10 @@
 
             sensor-bindings =
                 <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&scroll_up_down>,
+                <&scroll_move_y>,
                 <&rot_kp LG(TAB) LA(LC(RIGHT))>;
                 //<&rot_msc MOVE_DOWN MOVE_UP>,
-                //<&scroll_up_down2 SCRL_UP SCRL_DOWN>,
+                //<&scroll_up_down SCRL_UP SCRL_DOWN>,
         };
 
         // MacOS用
