@@ -118,7 +118,7 @@
 
             sensor-bindings =
                 <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&scroll_move_y>,
+                <&scroll_up_down>,
                 <&rot_kp LG(TAB) LA(LC(RIGHT))>;
                 //<&rot_msc MOVE_DOWN MOVE_UP>,
                 //<&scroll_up_down SCRL_UP SCRL_DOWN>,
