@@ -12,6 +12,9 @@
 // #define ZMK_MOUSE_SCRL_VAL 100
 // #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 
+// マウススクロールにはコレ？
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 / {
     /* Behaviors */
     // スクロール設定
@@ -45,8 +48,8 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            // ※112以下だと動作しない
-            tap-ms = <113>;
+
+            tap-ms = <20>;
         };
 
         // エンコーダー：マウススクロール(MOVE_Y 専用)
@@ -55,18 +58,17 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc MOVE_Y(20)>, <&msc MOVE_Y(-20)>;
 
-            // tap-ms下限メモ Yの値で可変: Y(15) <81>, Y(20) <65>, Y(25) <49>
-            tap-ms = <65>;
+            tap-ms = <20>;
         };
 
-        // behavior-sensor-rotate-var に SCRL_UP 渡しても違いは感じない
-        //scroll_up_down2: sensor_rotate_msc2  {
-        //    compatible = "zmk,behavior-sensor-rotate-var";
-        //    #sensor-binding-cells = <2>;
-        //    bindings = <&msc>, <&msc>;
-        //    tap-ms = <113>;
-        //};
+        // エンコーダー：マウススクロール(MOVE_X 専用)
+        scroll_move_x: sensor_rotate_msc_for_move_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_X(20)>, <&msc MOVE_X(-20)>;
 
+            tap-ms = <20>;
+        };
     };
 
     /* キーマップ */
